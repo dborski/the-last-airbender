@@ -10,16 +10,16 @@
     <%= image_tag "#{airbender.photo_url}" %>
 
     <h4>Allies:</h4>
-    <p><% airbender.allies.each do |ally| %></p>
+    <% airbender.allies.each do |ally| %>
       <p><%= ally %></p>
     <% end %>
 
     <h4>Enemies:</h4>
-    <p><% airbender.enemies.each do |enemy| %></p>
+    <% airbender.enemies.each do |enemy| %>
       <p><%= enemy %></p>
     <% end %>
 
-    <h4>Affiliation:</h4> 
+    <h4>Affiliations:</h4> 
     <p><%= airbender.affiliation %></p>
     </section>
   <% end %>
