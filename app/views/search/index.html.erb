@@ -1,0 +1,26 @@
+<h1>Fire Nation</h1>
+
+<p>Members in Fire Nation: <%= @airbenders.count %></p>
+
+<section class="airbenders">
+  <% @airbenders.each do |airbender| %>
+    <section class="airbender">
+
+    <h2><%= airbender.name %></h2>
+    <%= image_tag "#{airbender.photo_url}" %>
+
+    <h4>Allies:</h4>
+    <p><% airbender.allies.each do |ally| %></p>
+      <p><%= ally %></p>
+    <% end %>
+
+    <h4>Enemies:</h4>
+    <p><% airbender.enemies.each do |enemy| %></p>
+      <p><%= enemy %></p>
+    <% end %>
+
+    <h4>Affiliation:</h4> 
+    <p><%= airbender.affiliation %></p>
+    </section>
+  <% end %>
+</section>

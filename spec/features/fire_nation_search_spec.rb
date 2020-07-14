@@ -8,18 +8,17 @@ RSpec.describe 'Fire Nation search spec', type: :feature do
       select "Fire Nation", :from => 'nation'
       click_button "Search For Members"
 
-      # expect(page).to have_css(".github")
       expect(page).to have_content("Members in Fire Nation: 20")
     end
 
-    # it "can see the name of five of my repositories with links to their repos on github", :vcr do
-    #   within(".github") do
-    #     expect(page).to have_css(".repo", count: 5)
-    #     within(first(".repo")) do
-    #       expect(page).to have_css(".repo-link")
-    #     end 
-    #   end
-    # end
+    it "shows the names of members of fire nation" do
+      within(".airbenders") do
+        expect(page).to have_css(".repo", count: 20)
+        within(first(".repo")) do
+          expect(page).to have_css(".repo-link")
+        end 
+      end
+    end
 
     # it "can see all of my bookmarked segments", :vcr do
     #   within(".bookmarked") do
