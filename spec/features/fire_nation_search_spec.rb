@@ -12,21 +12,14 @@ RSpec.describe 'Fire Nation search spec', type: :feature do
     end
 
     it "shows the names of members of fire nation" do
+      visit search_path
+
       within(".airbenders") do
-        expect(page).to have_css(".repo", count: 20)
-        within(first(".repo")) do
-          expect(page).to have_css(".repo-link")
-        end 
+        expect(page).to have_css(".airbender", count: 20)
+      end 
+      within(".airbenders") do
+        expect(page).to have_css(".airbender-name", count: 20)
       end
     end
-
-    # it "can see all of my bookmarked segments", :vcr do
-    #   within(".bookmarked") do
-    #     expect(page).to have_css(".tutorial", count: 3)
-    #     within(first(".tutorial")) do
-    #       expect(page).to have_css(".tutorial-video", count: 1)
-    #     end 
-    #   end
-    # end
   end 
 end 
